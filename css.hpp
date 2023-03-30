@@ -35,6 +35,14 @@ class Root{
         }
         return out;
     };
+    std::string toString(std::string name_){
+         if(this->checkExistName(name_) == false)
+             return "";
+        std::string out = "";
+        for(const auto& [key, value] : this->db[name_])
+            out += key+":"+value+";";
+        return out;
+    };
 
 };
 }

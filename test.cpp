@@ -28,6 +28,10 @@ TEST_SUITE("simple test") {
         std::string result = simple_test->get("html","background");
         CHECK(result == "#555");
     };
+    TEST_CASE("toStringName" * doctest::timeout(0.00002)){
+        std::string result = simple_test->toString("html");
+        CHECK(result == "background:#555;");
+    };
     TEST_CASE("toString" * doctest::timeout(0.00002)){
         std::string result = simple_test->toString();
         CHECK(result == "html{background:#555;}");
