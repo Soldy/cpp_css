@@ -45,4 +45,10 @@ class Root{
     };
 
 };
+std::string toString(std::map<std::string, std::string> in_){
+    std::string out = "";
+    for(const auto& [key, value] : in_)
+        out += key+":"+value+";";
+    return out;
+};
 }
